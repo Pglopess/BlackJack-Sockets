@@ -1,56 +1,47 @@
-# Blackjack Multiplayer em Python
+# Blackjack Multiplayer via Sockets
 
-## Descrição
-Este projeto é uma implementação simples de um jogo de **Blackjack** multiplayer utilizando **Python** e **sockets TCP** para conexão entre servidor e clientes. Dois jogadores podem se conectar ao servidor, fazer apostas e jogar contra o dealer.
+Jogo de Blackjack para dois jogadores em rede, com comunicação via sockets TCP em Python.
 
-## Tecnologias Utilizadas
-- **Python**
-- **Sockets TCP/IP**
-- **Programação Orientada a Eventos**
+## Sobre
 
-## Como Funciona
-- O servidor aguarda conexão de dois jogadores.
-- Cada jogador começa com um saldo inicial de **100**.
-- Os jogadores fazem suas apostas antes de cada rodada.
-- O jogo segue as regras padrão do Blackjack:
-  - Cartas de **2 a 10** valem seu próprio número.
-  - **J, Q, K** valem **10** pontos.
-  - **A (As)** vale **11**, mas pode ser **1** se o jogador estourar 21.
-- Os jogadores decidem se pedem mais cartas (**hit**) ou se mantêm a mão (**stand**).
-- O dealer segue as regras padrão e joga após os jogadores.
-- O saldo é atualizado conforme o resultado da rodada.
-- Os jogadores podem decidir se querem continuar jogando ou sair.
+O servidor gerencia a lógica do jogo e se comunica com dois clientes conectados simultaneamente. Cada jogador recebe cartas, decide suas jogadas e aposta parte do saldo. O dealer joga automaticamente seguindo a regra de parar em 17 ou mais.
 
-## Estrutura do Projeto
-O projeto está dividido em dois arquivos principais:
-- **servidor.py**: Responsável por gerenciar as conexões e a lógica do jogo.
-- **cliente.py**: Interface do jogador para interagir com o servidor.
+## Funcionalidades
 
-## Como Executar
-1. Clone este repositório:
-   ```sh
-   git clone https://github.com/Pglopess/blackjack-multiplayer.git
-   cd blackjack-multiplayer
-   ```
-2. Execute o servidor primeiro:
-   ```sh
-   python servidor.py
-   ```
-3. Em outra janela de terminal, execute dois clientes:
-   ```sh
-   python cliente.py
-   ```
-   E repita para um segundo cliente.
-4. Siga as instruções no terminal para jogar.
+- Partida entre dois jogadores conectados via rede
+- Dealer automático (para em 17+)
+- Mecânica do Ás (vale 11 ou 1, conforme necessário)
+- Sistema de apostas com saldo inicial de 100 fichas
+- Rodadas contínuas até os jogadores decidirem sair
 
-## Melhorias Futuras
-- Adicionar uma interface gráfica (GUI) para melhor experiência do jogador.
-- Implementar mais regras do jogo para torná-lo mais realista.
-- Permitir mais de dois jogadores por partida.
+## Tecnologias
 
-## Contribuição
-Sinta-se à vontade para sugerir melhorias ou fazer um **fork** do repositório. Feedbacks são sempre bem-vindos! :smiley:
+- Python (socket, random)
 
-## Autor
-[Pedro Gustavo Thomas](https://www.linkedin.com/in/pedro-gustavo-thomas-5935392b7)
+## Como executar
 
+**1. Inicie o servidor:**
+```bash
+python servidor.py
+```
+
+**2. Em dois terminais diferentes, conecte os clientes:**
+```bash
+python cliente.py
+```
+
+O servidor aguarda os dois clientes antes de iniciar o jogo.
+
+## Estrutura do projeto
+
+```
+├── servidor.py   # Lógica do jogo, dealer e comunicação com os clientes
+└── cliente.py    # Interface do jogador via terminal
+```
+
+## Conceitos praticados
+
+- Comunicação em rede com sockets TCP
+- Arquitetura cliente-servidor
+- Lógica de jogo (Blackjack)
+- Programação com múltiplas conexões simultâneas
