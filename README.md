@@ -4,7 +4,7 @@ Jogo de Blackjack para dois jogadores em rede, com comunicação via sockets TCP
 
 ## Sobre
 
-O servidor gerencia a lógica do jogo e se comunica com dois clientes conectados simultaneamente. Cada jogador recebe cartas, decide suas jogadas e aposta parte do saldo. O dealer joga automaticamente seguindo a regra de parar em 17 ou mais.
+O servidor gerencia a lógica do jogo e se comunica com os dois clientes conectados simultaneamente. Cada jogador recebe cartas, decide suas jogadas e aposta parte do saldo. O dealer joga automaticamente seguindo a regra de parar em 17 ou mais.
 
 ## Funcionalidades
 
